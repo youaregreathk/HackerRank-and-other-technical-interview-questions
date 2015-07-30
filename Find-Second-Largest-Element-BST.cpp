@@ -1,3 +1,13 @@
+/********************************************************************************
+Find the Second Largest in a BST
+
+case 1 "it's simply the parent of the largest element!" 
+
+case 2  If the largest element itself has a left subtree. The second largest is the 
+        largest of the left subtree
+
+******************************************************************************/
+
 int binary_tree::Max_element(node*tmp)
 {
   if(tmp->right==NULL)
