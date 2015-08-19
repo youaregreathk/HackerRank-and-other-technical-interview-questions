@@ -1,5 +1,5 @@
 /********************************************************************************
-Find the Second Largest in a BST
+Find the Second Largest in a Binary Search Tree
 
 case 1 "it's simply the parent of the largest element!" 
 
