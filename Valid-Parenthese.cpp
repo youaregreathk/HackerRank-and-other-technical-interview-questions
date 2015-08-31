@@ -5,7 +5,7 @@ Given a string containing just the characters '(', ')', '{', '}', '[' and ']', d
 
 The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
 
-*******************************************************************************/
+******************************************************************************/
 class Solution {
 public:
   bool check_k(stack<char>& left_stack,char target_item)
