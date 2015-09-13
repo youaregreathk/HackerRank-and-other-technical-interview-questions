@@ -104,3 +104,44 @@ int main()
   unordered_set<string> dict ({"bcc","db","a"});
   wordBreak("bccdba", dict)? cout<<"Yes":cout<<"No";
 }
+
+/******************************************************************************
+Method 2(Dynamic Programming)
+
+We traverse the target word from the first character, it any word in the dictionary matches the target word from the fist character we change the ending index into true and then save it into the array. Then we keep traverse the target wor. We then only look at thoes index which are true we use a for loop to compare the next character with the dictionary. If the last index in the memory array is true, then all the characters in the target word match the dictionart 
+
+
+
+
+ ****************************************************************************/
+
+class Solution {
+public:
+  bool wordBreak(string s, unordered_set<string>& wordDict) {
+    bool *Memoey_array=new bool[s.length()+1] { false }; //Create a boolean array to store
+    Memoey_array[0]=true;        //The first index is true, so that we can begin comparing the rest
+    for(int i=0;i<s.length();i++)
+      {
+        if(Memoey_array[i]==false)    //Only process thoese which is true
+	  continue;
+    
+        for( string word: wordDict)
+	  {
+	    int len= (int)word.length();   
+	    int end= i+len;
+        
+	    if(end>s.length())
+	      continue;
+        
+	    string tmp;
+	    tmp=s.substr(i, len);
+            if(tmp==word){
+	      //cout<<"It is now true "<<end<<endl;
+	      Memoey_array[end]=true; //Change the index to true
+            
+            }
+	  }
+      }
+    return Memoey_array[s.length()];   //If the last index is true then return true
+  }
+};
