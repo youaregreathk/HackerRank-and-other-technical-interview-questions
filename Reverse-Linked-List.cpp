@@ -76,3 +76,27 @@ ListNode* reverseList(ListNode* head) {
   head=cur;
   return head;
 }
+//*****************************************************************************
+//Recursive Solution
+//(Review needed)
+class Solution {
+public:
+  //In the case head->1->2->3->4->5
+  ListNode* reverseList(ListNode* head)   //Recursive Solution
+  {
+    if(head==NULL)
+      return NULL;
+    if(head->next==NULL)
+      return head;
+
+    ListNode* tmp=head->next;
+    head->next=NULL;
+    //tmp->next=head;//Cannot put here otherwise infinite loop
+    ListNode*result=reverseList(tmp);    //Go to the the end at 5
+   
+    tmp->next=head;               //From 5 go back to 1
+    return result;                 //Always pass back 5
+  }
+
+    
+};
