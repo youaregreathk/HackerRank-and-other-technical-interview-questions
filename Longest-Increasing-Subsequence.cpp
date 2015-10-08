@@ -28,6 +28,8 @@ Now we are at node 5.Since we want the longest previous substring and with its l
 
 
 At last we traverse the entire memory loop to find the longest subsequence and return it.
+Reference
+http://www.cs.berkeley.edu/~vazirani/algorithms/chap6.pdf
 *****************************************************************************/
 
 #include <iostream>
